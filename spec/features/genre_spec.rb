@@ -27,15 +27,15 @@ describe 'genre form' do
     expect(page).to have_content("My genre name")
   end
 
-  # it 'shows an edit form that submits content and redirects and prints out params' do
-  #   @genre = Genre.create(name: "My Genre")
-  #
-  #   visit edit_genre_path(@genre)
-  #
-  #   fill_in 'genre[name]', with: "My edit"
-  #
-  #   click_on "Update Genre"
-  #
-  #   expect(page).to have_content("My edit")
-  # end
+  it 'shows an edit form that submits content and redirects and prints out params' do
+    @genre = Genre.create(name: "My Genre")
+
+    visit edit_genre_path(@genre)
+
+    fill_in 'genre[name]', with: "My edit"
+
+    click_on "Update Genre"
+
+    expect(page).to have_content("My edit")
+  end
 end

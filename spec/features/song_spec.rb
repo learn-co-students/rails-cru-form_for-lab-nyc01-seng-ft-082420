@@ -48,19 +48,19 @@ describe 'song form' do
     expect(page).to have_content("My song name")
   end
 
-  # it 'shows an edit form that submits content and redirects and prints out params' do
-  #   @song = Song.create(name: "My Song", artist_id: @artist.id, genre_id: @genre.id)
-  #
-  #   visit edit_song_path(@song)
-  #
-  #   fill_in 'song[name]', with: "My edit"
-  #   fill_in 'song[artist_id]', with: @artist.id
-  #   fill_in 'song[genre_id]', with: @genre.id
-  #
-  #   click_on "Update Song"
-  #
-  #   expect(page).to have_content("My edit")
-  # end
+  it 'shows an edit form that submits content and redirects and prints out params' do
+    @song = Song.create(name: "My Song", artist_id: @artist.id, genre_id: @genre.id)
+
+    visit edit_song_path(@song)
+
+    fill_in 'song[name]', with: "My edit"
+    fill_in 'song[artist_id]', with: @artist.id
+    fill_in 'song[genre_id]', with: @genre.id
+
+    click_on "Update Song"
+
+    expect(page).to have_content("My edit")
+  end
 end
 
 describe 'song index' do
