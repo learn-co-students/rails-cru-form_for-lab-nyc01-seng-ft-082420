@@ -1,0 +1,5 @@
+<h3> Artists Page </h3>
+
+  <% @artists.each_with_index do |artist, idx| %>
+    <%= (idx + 1).to_s + ". " + artist.name %><br>
+  <% end %>
